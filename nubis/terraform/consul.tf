@@ -1,6 +1,6 @@
 # Discover Consul settings
 module "consul" {
-  source       = "github.com/nubisproject/nubis-terraform//consul?ref=feature%2Farena"
+  source       = "github.com/gozer/nubis-terraform//consul?ref=feature%2Farena"
   region       = "${var.region}"
   environment  = "${var.environment}"
   account      = "${var.account}"

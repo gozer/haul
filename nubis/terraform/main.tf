@@ -1,5 +1,5 @@
 module "info" {
-  source      = "github.com/nubisproject/nubis-terraform//info?ref=feature%2Farena"
+  source      = "github.com/gozer/nubis-terraform//info?ref=feature%2Farena"
   region      = "${var.region}"
   environment = "${var.environment}"
   account     = "${var.account}"
@@ -73,7 +73,7 @@ resource "aws_security_group" "ci" {
 }
 
 module "worker" {
-  source        = "github.com/nubisproject/nubis-terraform//worker?ref=feature%2Farena"
+  source        = "github.com/gozer/nubis-terraform//worker?ref=feature%2Farena"
   region        = "${var.region}"
   environment   = "${var.environment}"
   account       = "${var.account}"
@@ -90,7 +90,7 @@ module "worker" {
 }
 
 module "load_balancer_web" {
-  source       = "github.com/nubisproject/nubis-terraform//load_balancer?ref=feature%2Farena"
+  source       = "github.com/gozer/nubis-terraform//load_balancer?ref=feature%2Farena"
   region       = "${var.region}"
   environment  = "${var.environment}"
   account      = "${var.account}"
@@ -108,7 +108,7 @@ module "load_balancer_web" {
 }
 
 module "ci" {
-  source                = "github.com/nubisproject/nubis-terraform//worker?ref=feature%2Farena"
+  source                = "github.com/gozer/nubis-terraform//worker?ref=feature%2Farena"
   region                = "${var.region}"
   environment           = "${var.environment}"
   account               = "${var.account}"
@@ -128,7 +128,7 @@ module "ci" {
 }
 
 module "load_balancer_ci" {
-  source       = "github.com/nubisproject/nubis-terraform//load_balancer?ref=feature%2Farena"
+  source       = "github.com/gozer/nubis-terraform//load_balancer?ref=feature%2Farena"
   region       = "${var.region}"
   environment  = "${var.environment}"
   account      = "${var.account}"
@@ -146,7 +146,7 @@ module "load_balancer_ci" {
 }
 
 module "dns_web" {
-  source       = "github.com/nubisproject/nubis-terraform//dns?ref=feature%2Farena"
+  source       = "github.com/gozer/nubis-terraform//dns?ref=feature%2Farena"
   region       = "${var.region}"
   environment  = "${var.environment}"
   account      = "${var.account}"
@@ -155,7 +155,7 @@ module "dns_web" {
 }
 
 module "storage" {
-  source                 = "github.com/nubisproject/nubis-terraform//storage?ref=feature%2Farena"
+  source                 = "github.com/gozer/nubis-terraform//storage?ref=feature%2Farena"
   region                 = "${var.region}"
   environment            = "${var.environment}"
   account                = "${var.account}"
